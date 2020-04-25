@@ -1,0 +1,14 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #EDEEF0;
+}
+a {
+  color: #fff;
+  text-decoration: none;
+}
+.container {
+  margin: 0 auto;
+  max-width: 1350px;
+  display: flex;
+  align-items: flex-start;
+}

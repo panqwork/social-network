@@ -1,0 +1,17 @@
+ul {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  width: 190px;
+  margin-right: 10px;
+}
+
+li {
+  margin-bottom: 12px;
+  padding: 5px 0;
+}
+
+li a {
+  color: #000;
+  font-size: 13px;
+}
