@@ -7,17 +7,17 @@ import {Content} from './components/content/content';
 import {BrowserRouter} from 'react-router-dom';
 
 import { library } from '@fortawesome/fontawesome-svg-core';
-import {faCheckSquare,faAddressCard} from '@fortawesome/free-solid-svg-icons';
-library.add(faCheckSquare,faAddressCard)
+import {faAngleUp} from '@fortawesome/free-solid-svg-icons';
+library.add(faAngleUp)
 
-function App() {
+function App(props) {
   return (
     <BrowserRouter>
       <div className="App">
         <Header/>
         <div className="container">
           <Navbar />
-          <Content/>
+          <Content dispatch={props.dispatch} inputTextarea={props.inputTextarea} state={props.state} />
         </div>
       </div>
     </BrowserRouter>

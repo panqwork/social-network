@@ -3,7 +3,15 @@ import ReactDOM from 'react-dom';
 import App from './resources/App';
 import * as serviceWorker from './serviceWorker';
 
-ReactDOM.render(<App />,document.getElementById('root'));
+import store from './redux/store'
+
+let renderTree = ()=>{ReactDOM.render(<App dispatch={store.dispath.bind(store)} state={store.getState()} inputTextarea={store.inputTextarea.bind(store)} />,document.getElementById('root'));}
+
+renderTree();
+
+store.subscribe(renderTree);
+
+
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

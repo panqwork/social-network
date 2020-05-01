@@ -1,0 +1,14 @@
+.profile_avatar {
+  width: 225px;
+  height: 225px;
+  background: #fff;
+  box-sizing: border-box;
+  border-radius: 5px;
+  border: 1px solid #e5e5e5;
+  padding: 10px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}

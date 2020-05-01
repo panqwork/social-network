@@ -1,17 +1,21 @@
-ul {
-  display: flex;
-  flex-direction: column;
+nav {
+  width: 180px;
   margin-top: 20px;
-  width: 190px;
   margin-right: 10px;
 }
 
+ul {
+  display: flex;
+  flex-direction: column;
+}
+
 li {
-  margin-bottom: 12px;
+  margin-bottom: 2px;
   padding: 5px 0;
 }
 
 li a {
-  color: #000;
+  color: #7287C8;
+  font-weight: 500;
   font-size: 13px;
 }

@@ -7,10 +7,10 @@ export const Navbar = () => {
     <nav>
       <ul>
         <li>
-          <Link to="/">Главная</Link>
+          <Link to="/profile">Моя страница</Link>
         </li>
         <li>
-          <Link to="messages">Сообщения</Link>
+          <Link to="/messages">Сообщения</Link>
         </li>
       </ul>
     </nav>

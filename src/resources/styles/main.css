@@ -6,9 +6,15 @@ a {
   color: #fff;
   text-decoration: none;
 }
+textarea {
+  font-family: Arial, Helvetica, sans-serif;
+}
+button {
+  border: none;
+}
 .container {
   margin: 0 auto;
-  max-width: 1350px;
+  max-width: 1124px;
   display: flex;
   align-items: flex-start;
 }
