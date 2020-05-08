@@ -1,38 +1,5 @@
-const ADD_POST = 'ADD-POST';
-const INPUT_TEXT_POST = 'INPUT-TEXT-POST';
-const INPUT_TEXT_MSG = 'INPUT-TEXT-MSG';
-const SEND_MSG_CHAT = 'SEND-MSG-CHAT'
-
-const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
-  "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
-];
-function Post(text,date,name="Anonymous") {
-  this.text = text;
-  this.name = name;
-  this.date = date;
-}
-function Message(text, date, name="Anonymous") {
-  this.text = text;
-  this.date = date;
-  this.sender = name;
-}
-function getCurrentDate() {
-  let date = new Date();
-  let day = date.getDate();
-  let month = monthNames[date.getMonth()];
-  let hour = date.getHours()
-  let minute = date.getMinutes();
-  if(day < 10) {
-    day = '0' + day
-  }
-  if(hour < 10) {
-    hour = '0' + hour;
-  }
-  if(minute < 10) {
-    minute = '0' + minute;
-  }
-  return `${day} ${month} ${hour}:${minute}`
-}
+import profileReducer from './reducer/profileReducer';
+import messageReducer from './reducer/messageReducer';
 
 const store = {
   _state: {
@@ -77,8 +44,8 @@ const store = {
 
   _callSubscriber() {},
 
-  subscribe(observer) {
-    this._callSubscriber = observer;
+  subscribe(callBack) {
+    this._callSubscriber = callBack;
   },
 
   getState(){
@@ -86,39 +53,14 @@ const store = {
   },
 
   dispath(action) { // object{type}
-    switch(action.type) {
-      case ADD_POST:
-        let textPost = this._state.userProfile.currentInputText
-        this._state.userProfile.userPosts.unshift(new Post(textPost, getCurrentDate()));
-        this._callSubscriber();
-        this._state.userProfile.currentInputText = ''
-        break;
-      case INPUT_TEXT_POST:
-        this._state.userProfile.currentInputText = action.text;
-        this._callSubscriber()
-        break;
-      case SEND_MSG_CHAT:
-        let textMsg = this._state.userMessages.currentInputText
-        this._state.userMessages.messages.push(new Message(textMsg))
-        this._callSubscriber()
-        this._state.userMessages.currentInputText = ''
-        break;
-      case INPUT_TEXT_MSG:
-        this._state.userMessages.currentInputText = action.text;
-        this._callSubscriber();
-        break;
-      default:
-        alert('please, reload a page');
-        break;
-    }
+    this._state.userProfile = profileReducer(this._state.userProfile, action);
+    this._state.userMessages = messageReducer(this._state.userMessages, action);
+    this._callSubscriber()
   }
   
 }
 
 
-export const addPostAtcionCreator = ()=>({type:ADD_POST})
-export const changePostInputTextActionCreator = (text)=>({type: INPUT_TEXT_POST, text:text})
-export const changeMsgInputTextActionCreator = (text)=>({type: INPUT_TEXT_MSG, text: text})
-export const sendMsgActionCreator = (text)=>({type: SEND_MSG_CHAT})
+
 
 export default store;

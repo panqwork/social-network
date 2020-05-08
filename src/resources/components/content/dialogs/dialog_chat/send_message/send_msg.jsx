@@ -4,7 +4,7 @@ import s from './send_msg.module.css';
 //component 
 import Button from '../../../../generic/button/button'
 
-import {changeMsgInputTextActionCreator, sendMsgActionCreator} from '../../../../../../redux/store'
+import {changeMsgInputTextActionCreator, sendMsgActionCreator} from '../../../../../../redux/reducer/messageReducer'
 
 const SendMsg = (props) => {
   const textRef = React.createRef();

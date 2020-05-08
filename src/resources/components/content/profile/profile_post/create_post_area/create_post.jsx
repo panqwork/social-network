@@ -2,7 +2,7 @@ import React from 'react';
 import s from './create-post-style.module.css';
 import Button from '../../../../generic/button/button'
 
-import {changePostInputTextActionCreator,addPostAtcionCreator} from '../../../../../../redux/store'
+import {changePostInputTextActionCreator,addPostAtcionCreator} from '../../../../../../redux/reducer/profileReducer'
 
 const createPost = (props) => {
   let textArea = React.createRef();
