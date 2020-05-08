@@ -8,13 +8,19 @@ a {
 }
 textarea {
   font-family: Arial, Helvetica, sans-serif;
+  resize: none;
+  font-size: 14px;
+  box-sizing: border-box;
 }
 button {
   border: none;
 }
 .container {
   margin: 0 auto;
-  max-width: 1124px;
+  width: 1124px;
   display: flex;
   align-items: flex-start;
+}
+.app {
+  height: 100vh;
 }

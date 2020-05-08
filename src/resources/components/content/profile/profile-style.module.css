@@ -13,7 +13,6 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  margin-left: 10px;
 }
 
 .narrow_block>div, .wide_block>div {

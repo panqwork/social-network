@@ -5,7 +5,7 @@ import * as serviceWorker from './serviceWorker';
 
 import store from './redux/store'
 
-let renderTree = ()=>{ReactDOM.render(<App dispatch={store.dispath.bind(store)} state={store.getState()} inputTextarea={store.inputTextarea.bind(store)} />,document.getElementById('root'));}
+let renderTree = ()=>{ReactDOM.render(<App dispatch={store.dispath.bind(store)} state={store.getState()} />,document.getElementById('root'));}
 
 renderTree();
 

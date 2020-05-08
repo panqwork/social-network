@@ -17,7 +17,7 @@ function App(props) {
         <Header/>
         <div className="container">
           <Navbar />
-          <Content dispatch={props.dispatch} inputTextarea={props.inputTextarea} state={props.state} />
+          <Content dispatch={props.dispatch} state={props.state} />
         </div>
       </div>
     </BrowserRouter>

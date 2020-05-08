@@ -1,0 +1,5 @@
+.messages_content {
+  display: flex;
+  align-items: flex-start;
+  height: 100%;
+}

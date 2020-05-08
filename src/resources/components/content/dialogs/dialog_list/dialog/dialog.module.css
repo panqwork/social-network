@@ -1,0 +1,14 @@
+.dialog_item {
+  display: flex;
+  padding: 10px;
+  border-bottom: 1px solid #e5e5e5;
+}
+.dialog_item:last-child {
+  border-bottom: 0;
+}
+
+.author {
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: capitalize;
+}

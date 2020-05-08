@@ -7,14 +7,12 @@
   border-radius: 5px;
 }
 
-textarea {
+.create_post {
   width: 100%;
-  resize: none;
   height: 80px;
   margin: 0;
   padding: 10px;
   box-sizing: border-box;
-  font-size: 14px;
   border: none;
   border-bottom: 1px solid #EDEEF0;
   margin-bottom: 10px;

@@ -1,0 +1,32 @@
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+img.main {
+  padding: 10px;
+  background: #fff;
+  width: 225px;
+  height: 225px;
+  box-sizing: border-box;
+  border: 1px solid #e5e5e5;
+  border-radius: 5px;
+}
+img.post {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+img.dialog {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+img.message {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  margin-right: 15px;
+}
