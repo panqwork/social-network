@@ -3,7 +3,7 @@ import React from 'react';
 import s from './list.module.css';
 
 //component 
-import Message from '../message/message';
+import Message from './message/message';
 
 const MessageList = (props) => {
   const msgs = props.messages.map((e)=><Message sender={e.sender} text={e.text}/>)

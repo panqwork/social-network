@@ -4,13 +4,14 @@ import App from './resources/App';
 import * as serviceWorker from './serviceWorker';
 
 import store from './redux/redux-store'
-console.log(store);
 
-let renderTree = ()=>{ReactDOM.render(<App dispatch={store.dispatch} state={store.getState()} />,document.getElementById('root'));}
+let renderTree = (store)=>{ReactDOM.render(<App store={store} />,document.getElementById('root'));}
 
-renderTree();
+renderTree(store);
 
-store.subscribe(renderTree);
+store.subscribe(()=>{
+  renderTree(store)
+});
 
 
 

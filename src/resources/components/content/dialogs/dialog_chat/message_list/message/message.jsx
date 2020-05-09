@@ -1,5 +1,5 @@
 import React from 'react';
-import Avatar from '../../../../avatar/avatar';
+import Avatar from '../../../../../avatar/avatar';
 
 import s from './message.module.css';
 

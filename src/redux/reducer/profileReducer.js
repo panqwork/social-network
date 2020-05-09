@@ -46,6 +46,5 @@ const profileReducer = (state=initialStore, action) => {
 
 export const addPostAtcionCreator = ()=>({type:ADD_POST})
 export const changePostInputTextActionCreator = (text)=>({type: INPUT_TEXT_POST, text:text})
-
 export default profileReducer;
 
