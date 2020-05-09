@@ -1,6 +1,6 @@
+// self-written store manager
 import profileReducer from './reducer/profileReducer';
 import messageReducer from './reducer/messageReducer';
-
 const store = {
   _state: {
     userProfile: {
