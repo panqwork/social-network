@@ -3,9 +3,10 @@ import ReactDOM from 'react-dom';
 import App from './resources/App';
 import * as serviceWorker from './serviceWorker';
 
-import store from './redux/store'
+import store from './redux/redux-store'
+console.log(store);
 
-let renderTree = ()=>{ReactDOM.render(<App dispatch={store.dispath.bind(store)} state={store.getState()} />,document.getElementById('root'));}
+let renderTree = ()=>{ReactDOM.render(<App dispatch={store.dispatch} state={store.getState()} />,document.getElementById('root'));}
 
 renderTree();
 

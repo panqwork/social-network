@@ -26,8 +26,9 @@ function getCurrentDate() {
   return `${day} ${month} ${hour}:${minute}`
 }
 
-const profileReducer = (state, action) => {
-  
+let initialStore = {userPosts: [],currentInputText: ''};
+
+const profileReducer = (state=initialStore, action) => {
   switch(action.type) {
     case ADD_POST:
       let textPost = state.currentInputText

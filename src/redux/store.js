@@ -52,7 +52,7 @@ const store = {
     return this._state;
   },
 
-  dispath(action) { // object{type}
+  dispatch(action) { // object{type}
     this._state.userProfile = profileReducer(this._state.userProfile, action);
     this._state.userMessages = messageReducer(this._state.userMessages, action);
     this._callSubscriber()

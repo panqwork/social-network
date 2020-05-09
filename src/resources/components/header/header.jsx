@@ -6,7 +6,7 @@ import Logo from '../generic/logo/logo'
 
 export const Header = () => {
   return(
-    <header>
+    <header className={s.header}>
       <div className="container">
         <Logo/>
       </div>

@@ -6,9 +6,14 @@ function Message(text, date, name="Anonymous") {
   this.sender = name;
 }
 
-const messageReducer = (state, action) => {
-  
+let initialState = {
+  activeDialog: 1,
+  dialogs: [{id: 1,sender: 'Petya'},],
+  messages:[{id:1,sender: 'Васька', text: '*косится на него* пс, а как стать всеми? я тож хочу шикарно'},],
+  currentInputText: '',
+}
 
+const messageReducer = (state=initialState, action) => {
   switch(action.type) {
     case SEND_MSG_CHAT:
       let textMsg = state.currentInputText
@@ -21,7 +26,6 @@ const messageReducer = (state, action) => {
     default:
       break;
   }
-
   return state
 }
 
