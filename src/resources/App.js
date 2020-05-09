@@ -17,7 +17,7 @@ function App(props) {
         <Header/>
         <div className="container">
           <Navbar />
-          <Content dispatch={props.dispatch} state={props.state} />
+          <Content/>
         </div>
       </div>
     </BrowserRouter>

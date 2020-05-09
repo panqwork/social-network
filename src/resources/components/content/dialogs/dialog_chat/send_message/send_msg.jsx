@@ -4,20 +4,20 @@ import s from './send_msg.module.css';
 //component 
 import Button from '../../../../generic/button/button'
 
-import {changeMsgInputTextActionCreator, sendMsgActionCreator} from '../../../../../../redux/reducer/messageReducer'
 
 const SendMsg = (props) => {
   const textRef = React.createRef();
-  const changeInputText = () => {
-    props.dispatch(changeMsgInputTextActionCreator(textRef.current.value))
+  
+  const onChangeText = (e) => {
+    props.changeInputText(e.target.value)
   }
   const sendMessage = () => {
-    props.dispatch(sendMsgActionCreator(textRef.current.value))
+    props.sendMessage()
   }
 
   return(
     <div className={s.send}>
-      <textarea onChange={changeInputText} ref={textRef} value={props.userMessages.currentInputText} placeholder='Напишите сообщение...' className={s.message_textarea}></textarea>
+      <textarea onChange={onChangeText} ref={textRef} value={props.currentTextInput} placeholder='Напишите сообщение...' className={s.message_textarea}></textarea>
       <Button clickEvent={sendMessage}>Отправить</Button>
     </div>
   )

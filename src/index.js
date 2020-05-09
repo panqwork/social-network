@@ -2,11 +2,15 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './resources/App';
 import * as serviceWorker from './serviceWorker';
-
 import store from './redux/redux-store'
-console.log(store);
+import StoreContext from './contextAPI/store_context';
 
-let renderTree = ()=>{ReactDOM.render(<App dispatch={store.dispatch} state={store.getState()} />,document.getElementById('root'));}
+let renderTree = ()=>{
+  ReactDOM.render(
+      <StoreContext.Provider value={store}>
+        <App/>
+      </StoreContext.Provider>,document.getElementById('root')
+  )}
 
 renderTree();
 

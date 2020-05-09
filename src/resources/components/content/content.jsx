@@ -7,12 +7,12 @@ import Profile from './profile/profile';
 import Dialogs from './dialogs/dialogs';
 
 
-export const Content = (props) => {
+export const Content = () => {
   return(
     <div className={style.content}>
       <Switch>
-        <Route path="/profile" render={() => <Profile dispatch={props.dispatch} userProfile={props.state.userProfile}/>}/>
-        <Route path="/messages" render={() => <Dialogs userMessages={props.state.userMessages} dispatch={props.dispatch}/>}/>
+        <Route path="/profile" render={() => <Profile/>}/>
+        <Route path="/messages" render={() => <Dialogs/>}/>
       </Switch>
     </div>
   )
