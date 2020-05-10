@@ -17,16 +17,19 @@ const messageReducer = (state=initialState, action) => {
   switch(action.type) {
     case SEND_MSG_CHAT:
       let textMsg = state.currentInputText
-      state.messages.push(new Message(textMsg))
-      state.currentInputText = ''
-      break;
+      return {
+        ...state,
+        messages: [...state.messages, new Message(textMsg)],
+        currentInputText: ''
+      }
     case INPUT_TEXT_MSG:
-      state.currentInputText = action.text;
-      break;
+      return {
+        ...state,
+        currentInputText: action.text
+      }
     default:
-      break;
+      return state
   }
-  return state
 }
 
 

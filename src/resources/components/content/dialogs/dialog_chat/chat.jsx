@@ -2,18 +2,16 @@ import React from 'react';
 import s from './chat.module.css'
 
 //component 
-import MsgList from './message_list/messages_list'
-import SendMsg from './send_message/send_msg';
-
-import {changeMsgInputTextActionCreator, sendMsgActionCreator} from '../../../../../redux/reducer/messageReducer'
+import MessageListContainer from './message_list/message_list_container'
+import SendMsgContainer from './send_message/send_msg_container';
 
 
-const DialogChat = (props) => {
-  let state = props.store.getState()
+
+const DialogChat = () => {
   return (
     <div className={s.chat}>
-      <MsgList messages={state.userMessages.messages}/>
-      <SendMsg currentInputText={state.userMessages.currentInputText} sendMsg={()=>{props.store.dispatch(sendMsgActionCreator())}} changeTextarea={(text)=>{props.store.dispatch(changeMsgInputTextActionCreator(text))}}/>
+      <MessageListContainer/>
+      <SendMsgContainer/>
     </div>
   )
 }

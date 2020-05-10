@@ -6,7 +6,7 @@ import s from './list.module.css';
 import Message from './message/message';
 
 const MessageList = (props) => {
-  const msgs = props.messages.map((e)=><Message sender={e.sender} text={e.text}/>)
+  const msgs = props.messages.map((e)=><Message key={e.id} sender={e.sender} text={e.text}/>)
   return(
     <div className={s.message_list}>
       {msgs}

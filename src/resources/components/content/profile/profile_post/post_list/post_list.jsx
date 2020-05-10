@@ -3,7 +3,8 @@ import Post from './post/post';
 
 
 const List = (props) => {
-  let post_items = props.userPosts.map((e) => {return(<Post text={e.text} author={e.name} date={e.date}/>)})
+  console.log(props);
+  let post_items = props.userPosts.map((e) => {return(<Post key={e.id} text={e.text} author={e.name} date={e.date}/>)})
   return(
     <div className="post_list">
       {post_items}

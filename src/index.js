@@ -4,8 +4,9 @@ import App from './resources/App';
 import * as serviceWorker from './serviceWorker';
 
 import store from './redux/redux-store'
+import { Provider } from 'react-redux';
 
-let renderTree = (store)=>{ReactDOM.render(<App store={store} />,document.getElementById('root'));}
+let renderTree = (store)=>{ReactDOM.render(<Provider store={store}><App store={store} /></Provider>,document.getElementById('root'));}
 
 renderTree(store);
 

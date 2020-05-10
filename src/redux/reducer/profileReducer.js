@@ -1,9 +1,10 @@
 const ADD_POST = 'ADD-POST';
 const INPUT_TEXT_POST = 'INPUT-TEXT-POST';
-function Post(text,date,name="Anonymous") {
+function Post(text,date,name="Anonymous", id) {
   this.text = text;
   this.name = name;
   this.date = date;
+  this.id = id;
 }
 const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
   "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
@@ -32,16 +33,19 @@ const profileReducer = (state=initialStore, action) => {
   switch(action.type) {
     case ADD_POST:
       let textPost = state.currentInputText
-      state.userPosts.unshift(new Post(textPost, getCurrentDate()));
-      state.currentInputText = ''
-      break;
+      return {
+        ...state,
+        userPosts: [...state.userPosts, new Post(textPost, getCurrentDate(), 'Создатель' , 10)],
+        currentInputText: '',
+      }
     case INPUT_TEXT_POST:
-      state.currentInputText = action.text;
-      break;
+      return {
+        ...state,
+        currentInputText: action.text
+      }
     default:
-      break;
-  }
-  return state;  
+      return state;
+  }  
 }
 
 export const addPostAtcionCreator = ()=>({type:ADD_POST})

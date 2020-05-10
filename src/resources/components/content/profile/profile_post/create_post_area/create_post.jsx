@@ -4,10 +4,9 @@ import Button from '../../../../generic/button/button'
 
 const createPost = (props) => {
   let textArea = React.createRef();
+  
   let publishPost = ()=>{
-    if(textArea.current.value) {
       props.addPost()
-    }
   }
   let onChnageText = (e)=>{
     props.updateTextarea(e.target.value);
