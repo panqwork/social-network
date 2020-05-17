@@ -1,4 +1,6 @@
 import React from 'react';
+
+// styles import
 import s from './button-style.module.css';
 
 const Button = (props) => {
