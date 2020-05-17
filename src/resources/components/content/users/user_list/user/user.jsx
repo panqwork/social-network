@@ -11,17 +11,17 @@ import Button from '../../../../generic/button/button.jsx';
 const User = (props) => {
   return(
     <div className={s.user}>
-      <Avatar type='list'/>
+      <Avatar src={props.src} type='list'/>
       <div className={s.user_info}>
         <div className={s.data}>
           {props.username}
         </div>
         <div className={s.about}>
-          {props.about}
+          {props.status}
         </div>
       </div>
       <div className={s.tools}>
-        {props.followStatus ? 
+        {props.followed ? 
           <Button clickEvent={()=>{props.unfollow(props.id)}}>Отписаться</Button> : <Button clickEvent={()=>{props.follow(props.id)}}>Подписаться</Button>}
       </div>
     </div>
