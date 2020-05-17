@@ -1,16 +1,22 @@
 import './styles/reset.css'
 import './styles/main.css';
+
 import React from 'react';
-import {Header} from './components/header/header';
-import {Navbar} from './components/navbar/navbar';
-import Content from './components/content/content';
+
+
 import {BrowserRouter} from 'react-router-dom';
 
+// component import
+import Content from './components/content/content.jsx';
+import Header from './components/header/header.jsx';
+import Navbar from './components/navbar/navbar.jsx';
+
+// font-awesome import
 import { library } from '@fortawesome/fontawesome-svg-core';
 import {faAngleUp} from '@fortawesome/free-solid-svg-icons';
 library.add(faAngleUp)
 
-function App(props) {
+const App = (props) => {
   return (
     <BrowserRouter>
       <div className="App">

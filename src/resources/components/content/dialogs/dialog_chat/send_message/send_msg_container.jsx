@@ -1,7 +1,11 @@
-import { connect } from "react-redux";
-import SendMsg from './send_msg';
+// components import
+import SendMsg from './send_msg.jsx';
 
-import {changeMsgInputTextActionCreator, sendMsgActionCreator} from '../../../../../../redux/reducer/messageReducer'
+import { connect } from 'react-redux';
+import {
+  changeMsgInputTextActionCreator,
+  sendMsgActionCreator
+} from '../../../../../../redux/reducer/messageReducer.js';
 
 let mapStateToProps = (state)=> {
   return({

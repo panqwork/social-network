@@ -1,6 +1,13 @@
-import { connect } from "react-redux";
-import CreatePost from './create_post'
-import {addPostAtcionCreator,changePostInputTextActionCreator} from '../../../../../../redux/reducer/profileReducer'
+// components import
+import CreatePost from './create_post.jsx'
+import {
+  addPostAtcionCreator,
+  changePostInputTextActionCreator
+} from '../../../../../../redux/reducer/profileReducer.js';
+
+// modules import
+import {connect} from 'react-redux';
+
 
 const mapStateToProps = (state) => {
   return({

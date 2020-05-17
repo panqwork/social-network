@@ -1,9 +1,10 @@
 import React from 'react';
 
-
+// styles import
 import s from './dialog.module.css'
-//component
-import Avatar from '../../../../avatar/avatar';
+
+//components import
+import Avatar from '../../../../avatar/avatar.jsx';
 
 const Dialog = (props) => {
   return (

@@ -1,8 +1,10 @@
 import React from 'react';
-import Avatar from '../../../../../avatar/avatar';
 
+// components import
+import Avatar from '../../../../../avatar/avatar.jsx';
+
+// styles import
 import s from './message.module.css';
-
 
 const Message = (props) => {
   return (

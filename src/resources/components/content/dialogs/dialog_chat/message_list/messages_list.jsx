@@ -1,9 +1,10 @@
 import React from 'react';
 
+// styles import
 import s from './list.module.css';
 
-//component 
-import Message from './message/message';
+//components import 
+import Message from './message/message.jsx';
 
 const MessageList = (props) => {
   const msgs = props.messages.map((e)=><Message key={e.id} sender={e.sender} text={e.text}/>)
@@ -14,4 +15,4 @@ const MessageList = (props) => {
   )
 }
 
-export default MessageList
+export default MessageList;

@@ -1,5 +1,7 @@
+// components import
+import PostList from './post_list.jsx'
+
 import { connect } from "react-redux";
-import PostList from './post_list'
 
 const mapStateToProps = (state) => {
   return({

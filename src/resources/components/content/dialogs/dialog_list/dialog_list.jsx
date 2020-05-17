@@ -1,9 +1,10 @@
 import React from 'react';
 
+// styles import
 import s from './dialog-list.module.css';
 
-//component 
-import Dialog from './dialog/dialog';
+//components import
+import Dialog from './dialog/dialog.jsx';
 
 
 

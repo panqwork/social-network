@@ -1,11 +1,12 @@
 import React from 'react';
-import Avatar from '../../avatar/avatar';
 
-import PostListContainer from './profile_post/post_list/post_list_container';
-import CreatePostContainer from './profile_post/create_post_area/create_post_container'
+// components import
+import Avatar from '../../avatar/avatar.jsx';
+import PostListContainer from './profile_post/post_list/post_list_container.jsx';
+import CreatePostContainer from './profile_post/create_post_area/create_post_container.jsx';
 
-import s from './profile-style.module.css'
-
+// styles import
+import s from './profile-style.module.css';
 
 const Profile = (props) => {
   return(

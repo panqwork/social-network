@@ -1,6 +1,10 @@
 import React from 'react';
+
+// styles import
 import s from './create-post-style.module.css';
-import Button from '../../../../generic/button/button'
+
+// components import
+import Button from '../../../../generic/button/button.jsx'
 
 const createPost = (props) => {
   let textArea = React.createRef();

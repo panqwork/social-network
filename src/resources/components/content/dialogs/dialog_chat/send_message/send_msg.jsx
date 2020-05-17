@@ -1,8 +1,10 @@
 import React from 'react';
+
+// styles import
 import s from './send_msg.module.css';
 
-//component 
-import Button from '../../../../generic/button/button'
+//components import 
+import Button from '../../../../generic/button/button.jsx';
 
 
 const SendMsg = (props) => {

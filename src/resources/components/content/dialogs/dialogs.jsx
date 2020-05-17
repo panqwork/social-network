@@ -1,18 +1,19 @@
 import React from 'react';
+
+// styles import
 import s from './dialog.module.css';
 
-//components 
-import DialogList from './dialog_list/dialog_list'
-import DialogChat from './dialog_chat/chat'
+// components import
+import DialogListContainer from './dialog_list/dialog_list_container.jsx';
+import DialogChat from './dialog_chat/chat.jsx';
 
 
 
 const Dialogs = (props) => {
-  let state = props.store.getState()
   return (
     <div className={s.messages_content}>
-      <DialogList dialogList={state.userMessages.dialogs}/>
-      <DialogChat store={props.store}/>
+      <DialogListContainer/>
+      <DialogChat />
     </div>
   )
 }
