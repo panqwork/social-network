@@ -6,7 +6,7 @@ import style from './content-style.module.css'
 // components import 
 import ProfileContainer from './profile/profile.jsx';
 import Dialogs from './dialogs/dialogs.jsx';
-import UsersContainer from './users/users.jsx'
+import UsersContainer from './users/users_container.jsx'
 
 // modules import
 import {Switch, Route} from 'react-router-dom';

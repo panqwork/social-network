@@ -1,0 +1,17 @@
+.user_list {
+  background: #fff;
+  padding: 0 10px;
+  border-radius: 5px;
+  border: 1px solid #e5e5e5;
+}
+
+.active_pagination {
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.pagination span {
+  cursor: pointer;
+  padding: 10px;
+  display: inline-block;
+}
