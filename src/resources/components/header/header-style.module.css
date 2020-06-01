@@ -4,4 +4,20 @@
   padding: 12px 0;
 }
 
+.header_container {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.userTools {
+  display: flex;
+  align-items: center;
+  margin: auto 0;
+  float: right;
+}
+
+.user {
+  cursor: pointer;
+  font-size: 14px;
+}
 

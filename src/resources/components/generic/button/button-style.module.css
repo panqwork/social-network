@@ -5,3 +5,8 @@
   border-radius: 3px;
   font-size: 14px;
 }
+
+.primary:disabled {
+  opacity: .5;
+  cursor: not-allowed;
+}

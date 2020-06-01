@@ -19,6 +19,9 @@
   font-size: 14px;
   margin-bottom: 6px;
 }
+.data a {
+  color: #000;
+}
 .about {
   font-size: 13px;
 }

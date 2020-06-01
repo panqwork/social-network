@@ -7,6 +7,8 @@ import s from './style.module.css';
 import Avatar from '../../../avatar/avatar.jsx';
 import Button from '../../../generic/button/button.jsx';
 
+import {NavLink} from 'react-router-dom';
+
 
 const User = (props) => {
   return(
@@ -14,7 +16,7 @@ const User = (props) => {
       <Avatar src={props.photo} type='list'/>
       <div className={s.user_info}>
         <div className={s.data}>
-          {props.username}
+          <NavLink to={'profile/' + props.id}>{props.username}</NavLink>
         </div>
         <div className={s.about}>
           {props.status}
@@ -22,7 +24,10 @@ const User = (props) => {
       </div>
       <div className={s.tools}>
         {props.followed ? 
-          <Button clickEvent={()=>{props.unfollow(props.id)}}>Отписаться</Button> : <Button clickEvent={()=>{props.follow(props.id)}}>Подписаться</Button>}
+          <Button disabled={props.followingItems.some(item => item === props.id)} clickEvent={(e)=>{
+            props.followSwitch('delete', props.id)
+          }}>Отписаться</Button> 
+          : <Button disabled={props.followingItems.some(item => item === props.id)} clickEvent={(e)=>{props.followSwitch('post', props.id)}}>Подписаться</Button>}
       </div>
     </div>
   )

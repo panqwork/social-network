@@ -8,7 +8,7 @@ import {BrowserRouter} from 'react-router-dom';
 
 // component import
 import Content from './components/content/content.jsx';
-import Header from './components/header/header.jsx';
+import HeaderContainer from './components/header/header_container.jsx';
 import Navbar from './components/navbar/navbar.jsx';
 
 // font-awesome import
@@ -20,7 +20,7 @@ const App = (props) => {
   return (
     <BrowserRouter>
       <div className="App">
-        <Header/>
+        <HeaderContainer/>
         <div className="container">
           <Navbar />
           <Content store={props.store} />
