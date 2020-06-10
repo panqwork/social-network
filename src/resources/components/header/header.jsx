@@ -5,6 +5,7 @@ import s from './header-style.module.css';
 
 //components import
 import Logo from '../generic/logo/logo.jsx';
+import { NavLink, Redirect } from 'react-router-dom';
 
 const Header = (props) => {
   return(
@@ -13,7 +14,12 @@ const Header = (props) => {
         <Logo/>
         <div className={s.userTools}>
           <div className={s.user}>
-            {props.authData.isAuth? props.authData.login: 'Войти'}
+            {props.authData.isAuth ? 
+              <div>
+                {props.authData.login}
+                <span onClick={()=>{props.logout()}}>Выйти</span>
+              </div> : 
+              <NavLink className={s.login} to='login'>Войти</NavLink>}
           </div>
         </div>
       </div>

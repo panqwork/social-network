@@ -8,6 +8,9 @@ import {followSwitch,setUsers,setUsersToState,changePageReducer,setUserCount,isF
 import UsersComponent from './users.jsx';
 import Preloader from '../../generic/preloader/preloader.jsx';
 
+import {withAuthRedirect} from '../../HOC/withAuthRedirect.js'
+import { compose } from 'redux';
+
 class Users extends React.Component {
   constructor(props) {
     super(props);
@@ -44,16 +47,19 @@ const mapStateToProps = (state) => {
     pageSize: state.userList.pageSize,
     totalUsersCount: state.userList.totalUsersCount,
     isFetchingBool: state.userList.isFetching,
-    followingItems: state.userList.followingItems
+    followingItems: state.userList.followingItems,
   })
 }
 
-export const UsersContainer = connect(mapStateToProps,{
-  setUsersToState,
-  changePageReducer,
-  setUserCount,
-  isFetching,
-  setUsers,
-  followSwitch
-}) (Users);
+export const UsersContainer = compose(
+  connect(mapStateToProps,{
+    setUsersToState,
+    changePageReducer,
+    setUserCount,
+    isFetching,
+    setUsers,
+    followSwitch
+  }),
+  withAuthRedirect,
+)(Users);
 

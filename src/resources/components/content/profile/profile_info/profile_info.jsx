@@ -1,5 +1,7 @@
 import React from 'react';
-import s from './style.module.css'
+import s from './style.module.css';
+
+import {ProfileStatus} from './profile_status/profile_status.jsx';
 
 const ProfileInfo = (props) => {
   return(
@@ -8,9 +10,7 @@ const ProfileInfo = (props) => {
           <p className={s.username}>
             {props.username}
           </p>
-          <span className={s.about}>
-            {props.about}
-          </span>
+          <ProfileStatus updateProfileStatus={props.updateProfileStatus} profileStatus={props.profileStatus}/>
         </div>
     </div>
   )

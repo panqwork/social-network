@@ -7,6 +7,8 @@ import s from './dialog.module.css';
 import DialogListContainer from './dialog_list/dialog_list_container.jsx';
 import DialogChat from './dialog_chat/chat.jsx';
 
+import {withAuthRedirect} from '../../HOC/withAuthRedirect.js';
+
 
 
 const Dialogs = (props) => {
@@ -18,4 +20,4 @@ const Dialogs = (props) => {
   )
 }
 
-export default Dialogs;
+export default withAuthRedirect(Dialogs);

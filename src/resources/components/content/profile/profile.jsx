@@ -3,7 +3,7 @@ import React from 'react';
 // components import
 import Avatar from '../../avatar/avatar.jsx';
 import PostListContainer from './profile_post/post_list/post_list_container.jsx';
-import CreatePostContainer from './profile_post/create_post_area/create_post_container.jsx';
+import {CreatePostContainer} from './profile_post/create_post_area/create_post_container.jsx';
 import ProfileInfo from './profile_info/profile_info.jsx';
 
 // styles import
@@ -20,7 +20,7 @@ const Profile = (props) => {
         <Avatar src={props.profile.photos.large} type='main'/>
       </div>
       <div className={s.wide_block}>
-        <ProfileInfo about={props.profile.aboutMe} username={props.profile.fullName}/>
+        <ProfileInfo updateProfileStatus={props.updateProfileStatus} profileStatus={props.profileStatus} username={props.profile.fullName}/>
         <CreatePostContainer/>
         <PostListContainer/>
       </div>

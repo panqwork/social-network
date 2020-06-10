@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 
 import {authRequestData} from '../../../redux/reducer/authReducer.js';
 
-import {isAuthThunk} from '../../../redux/reducer/authReducer.js';
+import {isAuthThunk, logout} from '../../../redux/reducer/authReducer.js';
 
 class authRequest extends React.Component {
   constructor(props) {
@@ -14,7 +14,7 @@ class authRequest extends React.Component {
     this.props.isAuthThunk()
   }
   render() {
-    return <Header authData={this.props.authData}/>
+    return <Header logout={this.props.logout} authData={this.props.authData}/>
   }
 }
 
@@ -24,5 +24,6 @@ let mapStateToProps = (state) => ({
 
 export default connect(mapStateToProps, {
   authRequestData,
-  isAuthThunk
+  isAuthThunk,
+  logout
 })(authRequest)

@@ -2,29 +2,56 @@ import React from 'react';
 import { connect } from 'react-redux';
 import Profile from './profile.jsx'
 
-import {setProfile,requireProfileThink} from '../../../../redux/reducer/profileReducer.js';
+import {requireProfile,requireProfileStatus,updateProfileStatus} from '../../../../redux/reducer/profileReducer.js';
 import { withRouter } from 'react-router-dom';
+
+import {withAuthRedirect} from '../../HOC/withAuthRedirect.js';
+import { compose } from 'redux';
 
 class ProfileContainer extends React.Component {
   constructor(props) {
     super(props)
+    this.state = {
+      userId: this.props.match.params.userId?this.props.match.params.userId:this.props.ourUserId
+    }
   }
   componentDidMount() {
-    let userId = this.props.match.params.userId?this.props.match.params.userId:2;
-    this.props.requireProfileThink(userId)
+    if(this.state.userId !== null){
+      this.setUser(this.state.userId)
+    }
+  }
+  componentDidUpdate(prevProps) {
+    if(prevProps.ourUserId !== this.props.ourUserId && !(this.props.match.params.userId) && this.props.ourUserId != null){
+      debugger
+      this.setState({
+        userId: this.props.ourUserId
+      })
+      this.setUser(this.props.ourUserId)
+    }
+  }
+  setUser(userId) {
+    this.props.requireProfile(userId);
+    this.props.requireProfileStatus(userId);
   }
   render() {
     return(
-      <Profile profile={this.props.profile}/>
+      <Profile updateProfileStatus={this.props.updateProfileStatus} profile={this.props.profile} profileStatus={this.props.profileStatus}/>
     )
   }
 }
 
 const mapStateToProps = (state) => ({
-  profile: state.userProfile.profile
+  profile: state.userProfile.profile,
+  profileStatus: state.userProfile.profileStatus,
+  ourUserId: state.auth.authData.id,
+  isAuth: state.auth.authData.isAuth
 })
 
-export default connect(mapStateToProps,{
-  setProfile,
-  requireProfileThink
-})(withRouter(ProfileContainer));
+export default compose(
+  connect(mapStateToProps,{
+    requireProfile,
+    requireProfileStatus,
+    updateProfileStatus,
+  }),
+  withRouter
+)(ProfileContainer)
