@@ -25,9 +25,8 @@ const authReducer = (state=initialState,action) => {
 
 export const authRequestData = (data) => ({type:IS_AUTH_REQUEST,dataAuth:data})
 
-export const isAuthThunk = () => {
-  return (dispatch) => {
-    authAPI.isAuth().then(
+export const isAuthThunk = () => (dispatch) => {
+    return authAPI.isAuth().then(
       response => {
         if(response.resultCode === 0) {
           dispatch(authRequestData({...response.data, isAuth: true}));
@@ -35,7 +34,6 @@ export const isAuthThunk = () => {
       }
     )
   }
-}
 
 export const login = (data) => (dispatch) => {
   authAPI.login({...data}).then(response => {

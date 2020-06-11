@@ -4,8 +4,6 @@ import Profile from './profile.jsx'
 
 import {requireProfile,requireProfileStatus,updateProfileStatus} from '../../../../redux/reducer/profileReducer.js';
 import { withRouter } from 'react-router-dom';
-
-import {withAuthRedirect} from '../../HOC/withAuthRedirect.js';
 import { compose } from 'redux';
 
 class ProfileContainer extends React.Component {
@@ -18,16 +16,18 @@ class ProfileContainer extends React.Component {
   componentDidMount() {
     if(this.state.userId !== null){
       this.setUser(this.state.userId)
+    } else {
+      this.props.history.push('/login')
     }
   }
   componentDidUpdate(prevProps) {
-    if(prevProps.ourUserId !== this.props.ourUserId && !(this.props.match.params.userId) && this.props.ourUserId != null){
-      debugger
+    debugger
+    if(prevProps.ourUserId !== this.props.ourUserId && !(this.props.match.params.userId) && this.props.ourUserId !== null){
       this.setState({
         userId: this.props.ourUserId
       })
       this.setUser(this.props.ourUserId)
-    }
+    } 
   }
   setUser(userId) {
     this.props.requireProfile(userId);
